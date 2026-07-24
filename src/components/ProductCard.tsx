@@ -1,4 +1,10 @@
-export default function ProductCard({ product }) {
+import { Product } from '../services/api';
+
+interface ProductCardProps {
+  product: Product;
+}
+
+export default function ProductCard({ product } : ProductCardProps) {
   // Calcoliamo la percentuale di sconto finta per il badge rosso
   const discount = Math.round(product.discountPercentage);
 
