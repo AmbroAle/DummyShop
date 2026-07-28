@@ -71,6 +71,7 @@ export default function Home() {
         </h2>
         <input 
           type="text" 
+          className='search-bar'
           placeholder="Search products..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

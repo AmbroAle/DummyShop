@@ -186,3 +186,13 @@ background-color: #ff3d00;
 color: #000;
 font-weight: bold;
 }
+
+.search-bar {
+  padding: '10px';
+  background: '#1a1a1a';
+  border: '1px solid #333';
+  color: 'white';
+  flex: 1;
+  margin-left: 30px;
+  margin-right: 30px;
+}
