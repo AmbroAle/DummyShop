@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import { getProducts, getCategories, getProductsByCategory, searchProducts, Product } from '../services/api';
+import ProductModal from '../components/ProductModal';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -10,6 +11,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   
   const [page, setPage] = useState<number>(1);
   const [totalProducts, setTotalProducts] = useState<number>(0);
@@ -153,7 +155,7 @@ export default function Home() {
               ) : (
                 <div className="grid">
                   {products.map(product => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} onClick={(product)=> setSelectedProduct(product)} />
                   ))}
                 </div>
               )}
@@ -194,6 +196,12 @@ export default function Home() {
           )}
         </main>
       </div>
+ {selectedProduct && (
+          <ProductModal 
+            product={selectedProduct} 
+            onClose={() => setSelectedProduct(null)} 
+          />
+        )}
     </div>
   );
 }
