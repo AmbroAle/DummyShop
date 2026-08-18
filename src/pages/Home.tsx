@@ -77,7 +77,7 @@ export default function Home() {
           placeholder="Search products..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          style={{ width: '300px', padding: '10px', background: '#1a1a1a', border: '1px solid #333', color: 'white' }}
+          style={{ width: '1000px', padding: '10px', background: '#1a1a1a', border: '1px solid #333', color: 'white' }}
         />
         <button className="btn-add" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <svg 
