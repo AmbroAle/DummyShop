@@ -1,4 +1,5 @@
 import { Product } from '../services/api';
+import { useCart } from '../context/CartContext';
 
 interface ProductCardProps {
   product: Product;
@@ -7,6 +8,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onClick }: ProductCardProps) {
   const discount = Math.round(product.discountPercentage);
+  const { addToCart } = useCart();
 
   return (
     <div
@@ -73,6 +75,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         <button
           className="btn-add"
           onClick={(e) => {
+            addToCart(product)
             e.stopPropagation();
           }}
         >

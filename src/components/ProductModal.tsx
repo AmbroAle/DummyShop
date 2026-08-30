@@ -1,4 +1,5 @@
 import { Product } from '../services/api';
+import { useCart } from '../context/CartContext';
 
 interface ProductModalProps {
   product: Product;
@@ -8,6 +9,7 @@ interface ProductModalProps {
 export default function ProductModal({ product, onClose }: ProductModalProps) {
   const discount = Math.round(product.discountPercentage);
   const originalPrice = (product.price * (1 + discount / 100)).toFixed(2);
+  const { addToCart } = useCart();
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -67,7 +69,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               </p>
             </div>
 
-            <button className="btn-add-large">
+            <button className="btn-add-large" onClick={e => addToCart(product)}>
               ADD TO CART
             </button>
           </div>
