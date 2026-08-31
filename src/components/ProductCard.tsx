@@ -66,7 +66,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
               fill="#ff3d00"
               style={{ verticalAlign: 'baseline' }}
             >
-              <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.399 8.168 1.399 8.168-7.333-3.858-7.333 3.858 1.399-8.168-5.934-5.787 8.2-1.192z" />
+              <path d="M12 2.5l2.95 6.02 6.64.97-4.8 4.68 1.13 6.61L12 17.66l-5.92 3.12 1.13-6.61-4.8-4.68 6.64-.97L12 2.5z" />
             </svg>
             {product.rating}
           </span>

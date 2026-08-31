@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import { getProducts, getCategories, getProductsByCategory, searchProducts, Product } from '../services/api';
 import ProductModal from '../components/ProductModal';
+import CartAside from '../components/CartAside.tsx';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,6 +17,7 @@ export default function Home() {
   const [page, setPage] = useState<number>(1);
   const [totalProducts, setTotalProducts] = useState<number>(0);
   const limit = 20;
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     getCategories().then(data => setCategories(data));
@@ -79,7 +81,7 @@ export default function Home() {
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{ width: '1000px', padding: '10px', background: '#1a1a1a', border: '1px solid #333', color: 'white' }}
         />
-        <button className="btn-add" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <button className="btn-add" onClick={() => setIsCartOpen(true)} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="18" 
@@ -202,6 +204,8 @@ export default function Home() {
             onClose={() => setSelectedProduct(null)} 
           />
         )}
+        <CartAside isOpen={isCartOpen} onClose={() => setIsCartOpen(false)}/>
     </div>
+
   );
 }
