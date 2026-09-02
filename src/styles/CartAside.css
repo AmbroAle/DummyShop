@@ -12,9 +12,7 @@
   background: #121212;
 }
 
-/* =========================
-   HEADER
-========================= */
+/*Header*/
 
 .cart-header {
   min-height: 84px;
@@ -32,6 +30,7 @@
   margin: 0;
   font-size: 20px;
   letter-spacing: 1px;
+  color: white;
 }
 
 .cart-header span {
@@ -43,9 +42,7 @@
   font-family: monospace;
 }
 
-/* =========================
-   CLOSE BUTTON
-========================= */
+/*Close Button*/
 
 .cart-close {
   border: none;
@@ -64,9 +61,7 @@
   color: white;
 }
 
-/* =========================
-   CONTENT
-========================= */
+/*Content*/
 
 .cart-content {
   flex: 1;
@@ -87,9 +82,7 @@
   background: #333;
 }
 
-/* =========================
-   EMPTY CART
-========================= */
+/*Empty Car*/
 
 .cart-empty {
   height: 100%;
@@ -116,9 +109,7 @@
   font-size: 14px;
 }
 
-/* =========================
-   CART ITEM
-========================= */
+/*Cart Item*/
 
 .cart-item {
   display: flex;
@@ -140,9 +131,7 @@
   background: #1b1b1b;
 }
 
-/* =========================
-   ITEM INFO
-========================= */
+/*Item Info*/
 
 .cart-item-info {
   flex: 1;
@@ -191,9 +180,7 @@
   font-weight: bold;
 }
 
-/* =========================
-   ITEM BOTTOM
-========================= */
+/*Item Button*/
 
 .cart-item-bottom {
   display: flex;
@@ -248,9 +235,7 @@
   font-weight: bold;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/*Footer*/
 
 .cart-footer {
   padding: 18px;
@@ -281,9 +266,6 @@
   font-size: 20px;
 }
 
-/* =========================
-   CHECKOUT
-========================= */
 
 .checkout-button {
   width: 100%;
